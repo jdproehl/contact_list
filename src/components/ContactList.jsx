@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ContactRow from "./ContactRow";
 import { useEffect } from "react";
+import SelectedContact from "./components/SelectedContact";
 
 const dummyContacts = [
   { id: 1, name: "R2-D2", phone: "222-222-2222", email: "r2d2@droids.com" },
@@ -15,7 +16,7 @@ export default function ContactList({ setSelectedContactId }) {
     async function fetchContacts() {
       try {
         const response = await fetch(
-          "https://jsonplace-univclone.herokuapp.com/users"
+          "https://fsa-jsonplaceholder-69b5c48f1259.herokuapp.com/users"
         );
         const result = await response.json();
         setContacts(result);
