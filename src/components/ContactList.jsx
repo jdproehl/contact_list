@@ -9,7 +9,7 @@ const dummyContacts = [
 ];
 
 
-export default function ContactList() {
+export default function ContactList({ setSelectedContactId }) {
   const [contacts, setContacts] = useState(dummyContacts);
   useEffect(() => {
     async function fetchContacts() {
@@ -25,7 +25,7 @@ export default function ContactList() {
     }
     fetchContacts();
   }, []);
- 
+
   return (
     <table>
       <thead>
